@@ -1,0 +1,32 @@
+This part was not fully explained in the Q&A session, and I saw the feedback of my Q&A session,
+so I will provide more details here. Overall, the recommendation system can run end-to-end
+and generate product recommendations, which can be regarded as a basic model. Although the
+scores are still not high, they show a clear improvement compared with the baseline.
+
+From the baseline results, where only a cosine similarity model was used to recommend
+six products, the evaluation scores were Precision@6 = 0.000542, Recall@6 = 0.000380, and
+MAP@6 slightly better at 0.001091. In the final evaluation, under the hybrid recommendation
+that combines the three methods, all metrics showed significant improvement, with MAP@6
+reaching 0.259. Compared with the baseline, the value grew by about 235 times, indicating
+relatively reasonable performance in ranking recommended items.
+
+However, Precision@6 and Recall@6 were 0.043 and 0.033 respectively. While still relatively
+low, they represent clear improvements over the baseline. The final MAP@6 score of the hybrid
+recommendation means that if a customer purchased 30 products, only 1 of them appeared in
+the Top-K recommendation list. Considering the small size of the experimental subset and the
+extremely large recommendation space (over 100,000 products), these results provide valuable
+reference. The specific values can be found in the supplement materials.
+
+The repeat-based recommendation method (Feature One) can ensure partial hits but has
+a limited recommendation scope. The content-based recommendation method (Feature Two)
+expands the diversity of recommendations but shows lower precision. The sequential-based rec-
+ommendation method (Feature Three) has certain advantages in recall, making it suitable for
+capturing short-term trends. The hybrid recommendation method combines the strengths of
+all three approaches.
+
+Since only a subset of 10,000 customers was used, the results may di”er from experiments
+conducted on the full dataset. Final recommendation system result is better than the baseline.
+In addition, the evaluation was limited to basic o!ine testing, the model design is relatively
+simple and has not yet incorporated more advanced deep learning methods, leaving significant
+room for improvement in both precision and recall. To further enhance performance, it will be
+necessary to integrate richer features and more sophisticated algorithms.
